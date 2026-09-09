@@ -5,11 +5,11 @@ from monitor.address import Address
 from werkzeug.middleware.proxy_fix import ProxyFix
 
 app = Flask(__name__)
+
 CORS(app, resources={
     r"/v1/*": {
         "origins": [
-            "http://127.0.0.1:5500",
-            "http://localhost:5500",
+            "https://server-monitor.darianelwood.com"
         ]
     }
 })

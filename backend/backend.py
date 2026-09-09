@@ -8,7 +8,7 @@ monitor = Monitor([
     Address("vps-8f5796f3.vps.ovh.net", 2303),
 ])
 
-@app.get("/servers")
+@app.get("/v1/api/serverQuery")
 def get_servers():
     return jsonify(monitor.fetch())
 

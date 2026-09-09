@@ -1,9 +1,18 @@
 from flask import Flask, jsonify
+from flask_cors import CORS
 from monitor.monitor import Monitor
 from monitor.address import Address
 from werkzeug.middleware.proxy_fix import ProxyFix
 
 app = Flask(__name__)
+CORS(app, resources={
+    r"/v1/*": {
+        "origins": [
+            "http://127.0.0.1:5500",
+            "http://localhost:5500",
+        ]
+    }
+})
 
 app.wsgi_app = ProxyFix(
     app.wsgi_app, x_for=1, x_proto=1, x_host=1, x_prefix=1

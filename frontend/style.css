@@ -5,26 +5,28 @@ body {
 }
 
 .main-content {
-    display: flex;
-    flex-direction: column;
-    border: blue, 3px, solid;
+    border: 3px solid blue;
     margin-left: 2rem;
     margin-right: 2rem;
+    overflow-x: auto;
 }
 
 .content-row {
-    justify-content: center;
+    display: grid;
+    grid-template-columns: 50px minmax(10rem, 1.5fr) minmax(10rem, 1.5fr) minmax(8rem, 1fr) minmax(8rem, 1fr) minmax(12rem, 1.5fr) 7rem 8rem;
     align-items: center;
-    display: flex;
-    flex-direction: row;
+    min-width: 70rem;
+    padding-bottom: 1.5rem;
+    padding-top: 1.5rem;
+    margin: 3rem;
 }
 
 .content-cell {
-    display: flex;
+    display: grid;
+    min-width: 0;
     text-align: center;
     justify-content: center;
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
+    padding: 0.75rem;
 }
 
 .status-circle {

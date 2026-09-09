@@ -1,0 +1,33 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    justify-content: center;
+    text-align: center;
+}
+
+.main-content {
+    display: flex;
+    flex-direction: column;
+    border: blue, 3px, solid;
+    margin-left: 2rem;
+    margin-right: 2rem;
+}
+
+.content-row {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+}
+
+.content-cell {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+}
+
+.status-circle {
+    height: 50px;
+    width: 50px;
+}

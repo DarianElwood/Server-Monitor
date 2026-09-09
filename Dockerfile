@@ -6,4 +6,4 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 COPY . .
 
-CMD ["waitress-serve" "--listen=0.0.0.0:8000," "backend.backend:app"]
+CMD ["waitress-serve", "--listen=0.0.0.0:8000", "backend.backend:app"]

@@ -1,24 +1,34 @@
+* {
+    box-sizing: border-box;
+}
+
 body {
     font-family: 'Roboto', sans-serif;
-    justify-content: center;
     text-align: center;
+    margin: 0;
+    padding: 1rem;
+}
+
+h1 {
+    margin: 1rem 0 2rem;
 }
 
 .main-content {
     border: 3px solid blue;
-    margin-left: 2rem;
-    margin-right: 2rem;
-    overflow-x: auto;
+    max-width: 90rem;
+    margin: 0 auto;
 }
 
 .content-row {
     display: grid;
     grid-template-columns: 50px minmax(10rem, 1.5fr) minmax(10rem, 1.5fr) minmax(8rem, 1fr) minmax(8rem, 1fr) minmax(12rem, 1.5fr) 7rem 8rem;
     align-items: center;
-    min-width: 70rem;
-    padding-bottom: 1.5rem;
-    padding-top: 1.5rem;
-    margin: 3rem;
+    padding: 1rem;
+    border-bottom: 1px solid #d7dbe0;
+}
+
+.content-row:last-child {
+    border-bottom: 0;
 }
 
 .content-cell {
@@ -27,9 +37,66 @@ body {
     text-align: center;
     justify-content: center;
     padding: 0.75rem;
+    overflow-wrap: anywhere;
+}
+
+.content-cell p {
+    margin: 0;
 }
 
 .status-circle {
     height: 50px;
     width: 50px;
+}
+
+@media (max-width: 600px) {
+    body {
+        padding: 0.75rem;
+    }
+
+    h1 {
+        font-size: 1.75rem;
+        margin: 0.75rem 0 1.25rem;
+    }
+
+    .main-content {
+        border-width: 2px;
+    }
+
+    .content-row {
+        grid-template-columns: minmax(7rem, 1fr) minmax(0, 2fr);
+        gap: 0.25rem 0.5rem;
+        padding: 0.75rem;
+        text-align: left;
+    }
+
+    .content-cell {
+        display: block;
+        padding: 0.5rem;
+        text-align: left;
+    }
+
+    .content-cell::before {
+        content: attr(data-label);
+        display: block;
+        font-size: 0.75rem;
+        font-weight: 700;
+        color: #59636e;
+        margin-bottom: 0.15rem;
+        text-transform: uppercase;
+    }
+
+    .content-cell:first-child {
+        grid-column: 1 / -1;
+        text-align: center;
+    }
+
+    .content-cell:first-child::before {
+        content: none;
+    }
+
+    .status-circle {
+        height: 40px;
+        width: 40px;
+    }
 }

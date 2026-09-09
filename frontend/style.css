@@ -52,6 +52,7 @@ h1 {
 @media (max-width: 600px) {
     body {
         padding: 0.75rem;
+        overflow-x: hidden;
     }
 
     h1 {
@@ -61,38 +62,48 @@ h1 {
 
     .main-content {
         border-width: 2px;
+        width: 100%;
     }
 
     .content-row {
-        grid-template-columns: minmax(7rem, 1fr) minmax(0, 2fr);
-        gap: 0.25rem 0.5rem;
-        padding: 0.75rem;
-        text-align: left;
+        display: block;
+        padding: 0.75rem 0.5rem;
     }
 
     .content-cell {
-        display: block;
-        padding: 0.5rem;
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 0.75rem;
+        width: 100%;
+        padding: 0.65rem 0.5rem;
         text-align: left;
+        border-bottom: 1px solid #edf0f2;
     }
 
     .content-cell::before {
         content: attr(data-label);
-        display: block;
+        display: inline-block;
+        flex: 0 0 38%;
         font-size: 0.75rem;
         font-weight: 700;
         color: #59636e;
-        margin-bottom: 0.15rem;
         text-transform: uppercase;
     }
 
     .content-cell:first-child {
-        grid-column: 1 / -1;
+        display: block;
         text-align: center;
+        border-bottom: 0;
+        padding-bottom: 0.9rem;
     }
 
     .content-cell:first-child::before {
         content: none;
+    }
+
+    .content-cell:last-child {
+        border-bottom: 0;
     }
 
     .status-circle {

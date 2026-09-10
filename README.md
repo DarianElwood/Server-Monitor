@@ -15,7 +15,7 @@ The API will be available at `http://127.0.0.1:8000`.
 To run it without Docker:
 
 ```sh
-python -m venv .venv
+python -m venv venv
 ```
 
 Activate the virtual environment, then install the dependencies:

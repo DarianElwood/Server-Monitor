@@ -22,7 +22,7 @@ h1 {
 .content-row {
     display: grid;
     grid-template-columns: 50px minmax(10rem, 1.5fr) minmax(10rem, 1.5fr) minmax(8rem, 1fr) minmax(8rem, 1fr) minmax(12rem, 1.5fr) 7rem 8rem;
-    align-items: center;
+    align-items: stretch;
     padding: 1rem;
     border-bottom: 1px solid #d7dbe0;
 }

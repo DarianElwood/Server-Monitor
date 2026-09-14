@@ -56,7 +56,7 @@ h1 {
 }
 
 @media (min-width: 600px) {
-    .content-cell:not(:first-child) {
+    .content-cell:not(:first-child):not(:last-child) {
         border-right: #59636e 1px solid;
     }
 }

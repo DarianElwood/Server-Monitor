@@ -49,6 +49,12 @@ h1 {
     width: 50px;
 }
 
+.label-row {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #59636e;
+}
+
 @media (max-width: 600px) {
     body {
         padding: 0.75rem;
@@ -109,5 +115,9 @@ h1 {
     .status-circle {
         height: 40px;
         width: 40px;
+    }
+
+    .hide-mobile {
+        display: none;
     }
 }

@@ -9,6 +9,13 @@ body {
     padding: 1rem;
 }
 
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
 h1 {
     margin: 1rem 0 2rem;
 }

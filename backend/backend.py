@@ -21,8 +21,9 @@ app.wsgi_app = ProxyFix(
 monitor = Monitor([
     # Additional server addresses can be added here as Address objects.
     Address("vps-8f5796f3.vps.ovh.net", 2303),
+    Address("104.204.222.44", 17777),
     Address("google.com", 9129),
-    Address("darkrp.mty.gg", 27016),
+    
 ])
 
 @app.get("/v1/api/serverQuery")

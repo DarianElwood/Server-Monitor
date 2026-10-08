@@ -3,12 +3,32 @@ import a2s
 
 class Monitor:
     def __init__(self, addresses: list) -> None:
+        """
+        Initializes the Monitor class with a list of Address objects.
+        
+        Args:
+            addresses (list): A list of Address objects to monitor.
+            
+        Raises:
+            TypeError: If any object in the provided list is not of type Address.    
+        """
+        
         for i in addresses:
             if not isinstance(i, Address):
-                raise TypeError("The provided object is not of type \"Address\"")
+                raise TypeError("The provided object is not of type"
+                                "\"Address\"")
         self.__addresses = addresses
             
     def __get_info(self) -> list:
+        """
+        Retrieves server information for each address in the monitor's 
+        list of addresses.
+        
+        Returns:
+            list: A list of tuples containing server information and the
+            corresponding address.
+        """
+        
         server_info = []
 
         for i in self.__addresses:
@@ -22,6 +42,13 @@ class Monitor:
         return server_info
     
     def fetch(self) -> list[dict]:
+        """
+        Fetches server information for all addresses in the monitor's list.
+        
+        Returns:
+            list: A list of dictionaries containing server information and
+            status for each address.    
+        """
         servers = []
 
         for info, address in self.__get_info():

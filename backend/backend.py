@@ -1,4 +1,4 @@
-from flask import Flask, jsonify
+from flask import Flask, jsonify, Response
 from flask_cors import CORS
 from monitor.monitor import Monitor
 from monitor.address import Address
@@ -19,11 +19,22 @@ app.wsgi_app = ProxyFix(
 )
 
 monitor = Monitor([
+    # Additional server addresses can be added here as Address objects.
     Address("vps-8f5796f3.vps.ovh.net", 2303),
+    Address("google.com", 9129),
 ])
 
 @app.get("/v1/api/serverQuery")
-def get_servers():
+def get_servers() -> Response:
+    """
+    Fetches server information for all addresses in the monitor's list
+    and returns it as a JSON response.
+    
+    Returns:
+        JSON: A JSON response containing server information and status for
+        each address.
+    """
+    
     return jsonify(monitor.fetch())
 
 if __name__ == "__main__":

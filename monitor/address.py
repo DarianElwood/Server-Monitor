@@ -8,6 +8,13 @@ class Address:
 
     @staticmethod 
     def read_from_json(path: str) -> list[Address]:
+        """
+        Reads a JSON file and returns a list of Address objects.
+        
+        Args: 
+            path (str): The path to the JSON file.
+        """
+        
         address_list = []
         with open(path, encoding="utf-8") as file:
             data = json.load(file)

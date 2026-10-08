@@ -15,13 +15,14 @@ h1 {
 
 .main-content {
     border: 3px solid blue;
+    width: 100%;
     max-width: 90rem;
     margin: 0 auto;
 }
 
 .content-row {
     display: grid;
-    grid-template-columns: 50px minmax(10rem, 1.5fr) minmax(10rem, 1.5fr) minmax(8rem, 1fr) minmax(8rem, 1fr) minmax(12rem, 1.5fr) 7rem 8rem;
+    grid-template-columns: 50px minmax(0, 1.5fr) minmax(0, 1.5fr) minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1.5fr) 7rem 8rem;
     align-items: stretch;
     padding: 1rem;
     border-bottom: 1px solid #d7dbe0;
